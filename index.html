@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRI MANJU NADH | AI Engineer & Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Sri Manju Nadh Dalavai, AI Engineer Intern at Neuraltrix. Specialist in ML, Python, and Full-Stack Development. Open for full-time roles and internships.">
+    <meta name="keywords" content="AI Engineer, Machine Learning, Python Developer, Sri Manju Nadh, Neuraltrix, Computer Science Portfolio">
+    
+    <!-- Open Graph for LinkedIn sharing -->
+    <meta property="og:title" content="Sri Manju Nadh | AI Engineer">
+    <meta property="og:description" content="Check out my AI and Software Development projects. Open for new opportunities.">
+    <meta property="og:type" content="website">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --accent: #3b82f6;
+            --bg-light: #ffffff;
+            --text-dark: #0f172a;
+            --text-gray: #64748b;
+            --border: rgba(99, 102, 241, 0.1);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            background: #fff;
+            color: var(--text-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* VIBRANT ANIMATED BACKGROUND */
+        .aura-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .aura {
+            position: absolute;
+            width: 80vw;
+            height: 80vw;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            animation: drift 25s infinite alternate;
+        }
+
+        .aura-1 { background: var(--primary); top: -20%; left: -20%; animation-duration: 20s; }
+        .aura-2 { background: var(--secondary); bottom: -20%; right: -20%; animation-delay: -5s; }
+        .aura-3 { background: var(--accent); top: 40%; right: -10%; animation-duration: 30s; }
+
+        @keyframes drift {
+            from { transform: translate(0, 0) rotate(0deg) scale(1); }
+            to { transform: translate(15%, 15%) rotate(180deg) scale(1.2); }
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: 0.4s var(--ease);
+        }
+
+        nav.scrolled {
+            top: 10px;
+            width: 98%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; gap: 5px; align-items: center; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-gray); 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            padding: 10px 15px;
+            border-radius: 50px;
+            transition: 0.3s; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-links a:hover { 
+            color: var(--primary); 
+            background: rgba(99, 102, 241, 0.08);
+        }
+        .nav-links a.nav-active {
+            color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 10vw, 7.5rem);
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #0f172a, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 { font-size: clamp(1.2rem, 3vw, 2.5rem); color: var(--text-gray); font-weight: 400; margin-bottom: 40px; height: 1.5em; }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.5s var(--ease);
+            display: inline-block;
+        }
+
+        .btn-primary { background: var(--text-dark); color: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 30px 60px rgba(99,102,241,0.2); background: var(--primary); }
+
+        /* SECTIONS */
+        section { padding: 120px 10%; max-width: 1400px; margin: 0 auto; scroll-margin-top: 100px; }
+        .section-head { text-align: center; margin-bottom: 80px; }
+        .section-head p { color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 5px; font-size: 0.8rem; margin-bottom: 10px; }
+        .section-head h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 50px;
+            transition: 0.6s var(--ease);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(99,102,241,0.1);
+            border-color: var(--primary);
+        }
+
+        /* TIMELINE */
+        .timeline-container { display: flex; flex-direction: column; gap: 40px; }
+        .xp-grid { display: grid; grid-template-columns: 200px 1fr; gap: 40px; }
+        .xp-date { font-weight: 800; color: var(--text-gray); font-size: 1.1rem; padding-top: 5px; }
+        .xp-content h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
+        .xp-tag { color: var(--primary); font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 25px; }
+        .xp-list { list-style: none; }
+        .xp-list li { margin-bottom: 15px; padding-left: 25px; position: relative; color: var(--text-gray); font-size: 1.05rem; }
+        .xp-list li::before { content: '✦'; position: absolute; left: 0; color: var(--primary); font-size: 1rem; }
+
+        /* SKILLS GRID */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .skill-box h4 { font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 30px; color: var(--text-dark); }
+        .skill-items { display: flex; flex-wrap: wrap; gap: 15px; }
+        .skill-items img { height: 50px; width: 50px; transition: 0.4s; }
+        .skill-items img:hover { transform: scale(1.3) rotate(10deg); }
+        .skill-pill { padding: 10px 25px; background: #f8faff; border: 1px solid var(--border); border-radius: 15px; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .skill-pill:hover { background: var(--primary); color: #fff; }
+
+        /* PROJECTS GRID */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; }
+        .project-card h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 15px; }
+        .project-card p { color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px; }
+        .tag-row { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tag { padding: 8px 20px; background: #f1f5f9; border-radius: 50px; font-size: 0.8rem; font-weight: 700; color: var(--text-dark); }
+
+        /* CONTACT */
+        .contact-card { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        input, textarea { width: 100%; padding: 20px; border-radius: 20px; border: 1px solid var(--border); background: #f8faff; font-family: inherit; font-size: 1rem; margin-bottom: 20px; outline: none; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: var(--primary); background: #fff; box-shadow: 0 10px 30px rgba(99,102,241,0.05); }
+
+        /* MARQUEE */
+        .marquee-container { padding: 60px 0; background: #f8faff; overflow: hidden; border-top: 1px solid var(--border); }
+        .marquee-content { display: flex; gap: 60px; animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .marquee-content img { height: 60px; filter: grayscale(1); opacity: 0.4; transition: 0.4s; }
+        .marquee-content img:hover { filter: grayscale(0); opacity: 1; transform: scale(1.2); }
+
+        /* REVEAL SCRIPT */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1.2s var(--ease); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* MODAL STYLES */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background: #fff;
+            width: 100%;
+            max-width: 850px;
+            max-height: 90vh;
+            border-radius: 40px;
+            padding: 50px;
+            position: relative;
+            overflow-y: auto;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: 0.4s var(--ease);
+        }
+        .modal.active { display: flex; }
+        .modal.active .modal-content { transform: scale(1); opacity: 1; }
+        .close-modal {
+            position: absolute;
+            top: 30px; right: 30px;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: var(--text-gray);
+            line-height: 1;
+        }
+        .project-card { cursor: pointer; }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 1100px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 400px;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                transition: 0.5s var(--ease);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+                z-index: 1000;
+                border-left: 1px solid var(--border);
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.2rem; }
+            .hamburger { display: flex; }
+            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+            
+            .contact-card, .xp-grid { grid-template-columns: 1fr; gap: 40px; }
+            nav { padding: 0 20px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .modal-content { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aura-bg">
+        <div class="aura aura-1"></div>
+        <div class="aura aura-2"></div>
+        <div class="aura aura-3"></div>
+    </div>
+
+    <nav id="main-nav">
+        <div class="logo">SMN <span>DALAVAI</span></div>
+        <div class="nav-links" id="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Internships</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Works</a>
+            <a href="#achievements">Milestones</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="Resume.pdf" target="_blank" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.8rem; margin-left: 10px;">Resume</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div style="padding: 10px 25px; border-radius: 50px; background: rgba(99, 102, 241, 0.1); color: var(--primary); font-weight: 800; font-size: 0.8rem; margin-bottom: 30px;">OPEN TO FULL-TIME OPPORTUNITIES</div>
+        <h1>Sri Manju Nadh</h1>
+        <h2 id="typing-text"></h2>
+        <div style="display: flex; gap: 20px;">
+            <a href="#projects" class="btn btn-primary">Check Works</a>
+            <a href="Resume.pdf" target="_blank" class="btn" style="border: 1px solid var(--border);">See My Resume</a>
+        </div>
+    </header>
+
+    <section id="about" class="reveal">
+        <div class="section-head">
+            <p>Introduction</p>
+            <h2>My Passion</h2>
+        </div>
+        <div class="card" style="max-width: 1000px; margin: 0 auto;">
+            <p style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 2rem; line-height: 1.8;">
+                I am a <strong>Computer Science Engineering</strong> student with a strong interest in building intelligent and scalable software solutions. I have hands-on experience in machine learning, web development, and data engineering, and I enjoy applying these skills to solve real-world problems.
+            </p>
+            <p style="font-size: 1.25rem; color: var(--text-dark); margin-bottom: 3rem; line-height: 1.8;">
+                I have worked on projects involving AI-based systems, full-stack applications, and data pipelines. I am particularly interested in areas such as <strong>Artificial Intelligence</strong>, backend development, and cloud technologies.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; text-align: center;">
+                <div><span style="font-size: 3rem; font-weight: 900; color: var(--primary); font-family: 'Playfair Display', serif;">7.0</span><p style="font-weight: 800; font-size: 0.8rem; color: var(--text-gray);">CGPA</p></div>
+                <div><span style="font-size: 3rem; font-weight: 900; color: var(--primary); font-family: 'Playfair Display', serif;">2+</span><p style="font-weight: 800; font-size: 0.8rem; color: var(--text-gray);">INTERNSHIPS</p></div>
+                <div><span style="font-size: 3rem; font-weight: 900; color: var(--primary); font-family: 'Playfair Display', serif;">10+</span><p style="font-weight: 800; font-size: 0.8rem; color: var(--text-gray);">PROJECTS</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="reveal">
+        <div class="section-head">
+            <p>Professional Path</p>
+            <h2>Industry Internships</h2>
+        </div>
+        <div class="timeline-container">
+            <div class="card">
+                <div class="xp-grid">
+                    <div class="xp-date">Present</div>
+                    <div class="xp-content">
+                        <h3>AI Engineer Intern</h3>
+                        <span class="xp-tag">Neuraltrix AI (Startup)</span>
+                        <ul class="xp-list">
+                            <li>Working on <strong>end-to-end AI pipelines</strong>, including data preprocessing, model training, and deployment for real-world applications.</li>
+                            <li>Implementing and integrating <strong>machine learning models</strong> (classification, regression, NLP) into production systems.</li>
+                            <li>Collaborating with developers to build <strong>scalable AI features</strong> using Python and REST APIs.</li>
+                            <li>Optimizing model performance through <strong>feature engineering</strong>, hyperparameter tuning, and evaluation metrics.</li>
+                            <li>Assisting in deploying models using <strong>cloud platforms</strong> and containerized environments (Docker basics).</li>
+                            <li>Handling structured and unstructured data using <strong>Pandas, NumPy</strong>, and preprocessing techniques.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="xp-grid">
+                    <div class="xp-date">May — Jun 2025</div>
+                    <div class="xp-content">
+                        <h3>AI Azure Virtual Internship</h3>
+                        <span class="xp-tag">Microsoft & Edunet (Cloud AI)</span>
+                        <ul class="xp-list">
+                            <li>Deployed machine learning models using <strong>Microsoft Azure ML Studio</strong> and Azure AI services.</li>
+                            <li>Integrated <strong>Azure Cognitive Services APIs</strong> (vision, speech, language) into applications.</li>
+                            <li>Developed an <strong>AI-based chatbot</strong> using Azure Bot Services and NLP.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="reveal">
+        <div class="section-head">
+            <p>Academic</p>
+            <h2>Education</h2>
+        </div>
+        <div class="timeline-container">
+            <div class="card" style="border-style: dashed;">
+                <div class="xp-grid">
+                    <div class="xp-date">2022 — 2026</div>
+                    <div class="xp-content">
+                        <h3>B.Tech (CSE)</h3>
+                        <p class="company">Vignan's University</p>
+                        <p>Currently specializing in Artificial Intelligence and Software Systems. Current CGPA: 7.0/10</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="border-style: dashed;">
+                <div class="xp-grid">
+                    <div class="xp-date">2020 — 2022</div>
+                    <div class="xp-content">
+                        <h3>Intermediate (MPC)</h3>
+                        <p class="company">Bhavishaya Junior College</p>
+                        <p>Achieved <strong>95.72 Percentile</strong> in JEE Mains.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="border-style: dashed;">
+                <div class="xp-date">2019 — 2020</div>
+                <div class="xp-content">
+                    <h3>Secondary Schooling (Class X)</h3>
+                    <p class="company">AP Samskruthi Vidhayala School</p>
+                    <p>Result: <strong>96% Aggregate</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <div class="section-head">
+            <p>Portfolio</p>
+            <h2>Selected Works</h2>
+        </div>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="card project-card" onclick="openProject('adaptive')">
+                <h3>Adaptive AI Interview</h3>
+                <p>Intelligent platform simulating real-world interviews with <strong>LLM evaluations</strong> and coding challenges.</p>
+                <div class="tag-row"><span class="tag">AI / LLM</span><span class="tag">Python</span></div>
+                <p style="margin-top: 20px; color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read More & Details →</p>
+                <div style="display:none;" id="adaptive-data">
+                    <span class="m-title">Adaptive AI Interview System</span>
+                    <span class="m-date">Jan 31, 2026 — Still Working</span>
+                    <div class="m-body">
+                        <p>An end-to-end intelligent platform designed to simulate real-world technical interviews. Uses speech recognition and text-to-speech for interaction.</p>
+                        <ul>
+                            <li>Leverages Large Language Models to evaluate candidate answers.</li>
+                            <li>Extracts key topics like skills, projects, and experience.</li>
+                            <li>Generates adaptive follow-up questions based on responses.</li>
+                            <li>Built-in coding environment for real-time problem solving.</li>
+                            <li>Generates detailed PDF reports with overall scores and performance analysis.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="card project-card" onclick="openProject('advocate')">
+                <h3>Advocate Portal</h3>
+                <p>Premium <strong>full-stack</strong> legal tech platform for case management and AI-driven research.</p>
+                <div class="tag-row"><span class="tag">Full-Stack</span><span class="tag">LegalTech</span></div>
+                <p style="margin-top: 20px; color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read More & Details →</p>
+                <div style="display:none;" id="advocate-data">
+                    <span class="m-title">Advocate Legal Portal</span>
+                    <span class="m-date">Nov 30, 2025 — Jan 30, 2026</span>
+                    <div class="m-body">
+                        <p>Streamlined workflow for legal professionals combining robust case management with AI-driven research intelligence.</p>
+                        <ul>
+                            <li><strong>Central Dashboard:</strong> Unified fixed-frame interface for tracking active cases and hearings.</li>
+                            <li><strong>Case Repository:</strong> Secure database for litigation records and historical data.</li>
+                            <li><strong>Legal Calendar:</strong> Specialized scheduling tool for court dates and client meetings.</li>
+                            <li>Automated document drafting and advanced search intelligence.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="card project-card" onclick="openProject('jarvis')">
+                <h3>Jarvis AI (Freelance)</h3>
+                <p>AI-powered <strong>personal assistant</strong> managing daily tasks with voice control and NLP.</p>
+                <div class="tag-row"><span class="tag">Python</span><span class="tag">Automation</span></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <p style="color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read More & Details →</p>
+                    <a href="https://github.com/Srimanjunadh/personal-ai-assistant.git" target="_blank" title="View Source Code" onclick="event.stopPropagation()">
+                        <img src="https://skillicons.dev/icons?i=github" style="height: 24px; width: 24px;">
+                    </a>
+                </div>
+                <div style="display:none;" id="jarvis-data">
+                    <span class="m-title">Jarvis AI Assistant</span>
+                    <span class="m-date">Jul 31, 2025 — Sep 17, 2025</span>
+                    <div class="m-body">
+                        <p>A freelance project creating a voice-activated assistant for productivity and system automation.</p>
+                        <ul>
+                            <li>Triggered by custom wake-phrase detection.</li>
+                            <li>Automates web searches, application control, and question answering.</li>
+                            <li>Utilizes speech recognition and high-quality text-to-speech libraries.</li>
+                            <li>Streamlines daily productivity through intelligent task scheduling.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="card project-card" onclick="openProject('medical')">
+                <h3>Medical Insurance</h3>
+                <p>Regression model achieving <strong>85% accuracy</strong> on health data prediction and feature engineering.</p>
+                <div class="tag-row"><span class="tag">ML</span><span class="tag">Python</span></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <p style="color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read More & Details →</p>
+                    <a href="https://github.com/Srimanjunadh/Medicalinsurence-prediction.git" target="_blank" title="View Source Code" onclick="event.stopPropagation()">
+                        <img src="https://skillicons.dev/icons?i=github" style="height: 24px; width: 24px;">
+                    </a>
+                </div>
+                <div style="display:none;" id="medical-data">
+                    <span class="m-title">Medical Insurance Prediction</span>
+                    <div class="m-body">
+                        <p>Predicting health insurance costs using sophisticated machine learning algorithms and statistical analysis.</p>
+                        <ul>
+                            <li>Advanced feature scaling and normalization techniques.</li>
+                            <li>85% accuracy across multiple testing datasets.</li>
+                            <li>Detailed correlation analysis of demographic factors on cost.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="card project-card" onclick="openProject('translator')">
+                <h3>Text Translator</h3>
+                <p>Full-stack translator with <strong>MERN</strong> integration and real-time TTS features.</p>
+                <div class="tag-row"><span class="tag">MERN</span><span class="tag">API</span></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <p style="color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read More & Details →</p>
+                    <a href="https://github.com/Srimanjunadh/Text_Translator.git" target="_blank" title="View Source Code" onclick="event.stopPropagation()">
+                        <img src="https://skillicons.dev/icons?i=github" style="height: 24px; width: 24px;">
+                    </a>
+                </div>
+                <div style="display:none;" id="translator-data">
+                    <span class="m-title">Text Translator Web App</span>
+                    <div class="m-body">
+                        <p>A full-featured translation utility built on modern web standards.</p>
+                        <ul>
+                            <li>Real-time translation across 50+ languages.</li>
+                            <li>User authentication and persistent history storage.</li>
+                            <li>Integrated text-to-speech for accurate pronunciation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="card project-card" onclick="openProject('etl')">
+                <h3>ETL Sales Pipeline</h3>
+                <p>Automated <strong>Data Engineering</strong> pipeline for business intelligence using SQLite.</p>
+                <div class="tag-row"><span class="tag">Data Eng</span><span class="tag">Python</span></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <p style="color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read More & Details →</p>
+                    <a href="https://github.com/Srimanjunadh/Data_ETL_Pipeline.git" target="_blank" title="View Source Code" onclick="event.stopPropagation()">
+                        <img src="https://skillicons.dev/icons?i=github" style="height: 24px; width: 24px;">
+                    </a>
+                </div>
+                <div style="display:none;" id="etl-data">
+                    <span class="m-title">ETL Sales Analytics Pipeline</span>
+                    <div class="m-body">
+                        <p>Handling large volumes of retail data through an automated extraction, transformation, and loading process.</p>
+                        <ul>
+                            <li>CLEANING raw CSV data using Pandas and NumPy.</li>
+                            <li>Automated SQL loading into SQLite database structures.</li>
+                            <li>Generates automated reports on sales performance metrics.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 7 -->
+            <div class="card project-card" onclick="openProject('news')">
+                <h3>Dept. News Portal</h3>
+                <p>Responsive <strong>web portal</strong> for real-time departmental news and information.</p>
+                <div class="tag-row"><span class="tag">Frontend</span><span class="tag">Portal</span></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <p style="color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read More & Details →</p>
+                    <a href="https://github.com/Srimanjunadh/Department_portfolio.git" target="_blank" title="View Source Code" onclick="event.stopPropagation()">
+                        <img src="https://skillicons.dev/icons?i=github" style="height: 24px; width: 24px;">
+                    </a>
+                </div>
+                <div style="display:none;" id="news-data">
+                    <span class="m-title">Department News Update Portal</span>
+                    <span class="m-date">Nov 30, 2024 — Mar 30, 2025</span>
+                    <div class="m-body">
+                        <p>Designed and implemented a responsive web-based news portal for departmental announcements.</p>
+                        <ul>
+                            <li>Streamlined internal communication and information dissemination.</li>
+                            <li>User-friendly interface for improved engagement.</li>
+                            <li>Real-time updates using modern JavaScript techniques.</li>
+                            <li>Enhanced internal knowledge sharing within the department.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal HTML -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modal-project-head"></div>
+            <div id="modal-project-body"></div>
+        </div>
+    </div>
+
+    <section id="achievements" class="reveal">
+        <div class="section-head">
+            <p>Milestones</p>
+            <h2>Achievements & Recognition</h2>
+        </div>
+        <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <div class="card" style="text-align: center; padding: 40px 30px;">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">🏆</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px;">JEE Mains</h3>
+                <p style="color: var(--primary); font-weight: 800; font-size: 1.8rem; margin-bottom: 10px;">95.72 %</p>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">National Level Percentile</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 40px 30px;">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">🏫</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px;">Class X</h3>
+                <p style="color: var(--primary); font-weight: 800; font-size: 1.8rem; margin-bottom: 10px;">96%</p>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">Secondary Schooling Aggregate</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 40px 30px;">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">☁️</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 10px;">AWS Bootcamp</h3>
+                <p style="color: var(--primary); font-weight: 800; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase;">Hands-on Training</p>
+                <p style="color: var(--text-gray); font-size: 0.85rem;">Cloud Infrastructure (2025)</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 40px 30px;">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">🌐</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 10px;">Cisco NetAcad</h3>
+                <p style="color: var(--primary); font-weight: 800; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase;">Cyber & Python</p>
+                <p style="color: var(--text-gray); font-size: 0.85rem;">Networking & Security Verified</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 40px 30px;">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">📜</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 10px;">Cambridge PET</h3>
+                <p style="color: var(--primary); font-weight: 800; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase;">A2 Level Cert</p>
+                <p style="color: var(--text-gray); font-size: 0.85rem;">English Proficiency (2022)</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 40px 30px;">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">🐍</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 10px;">HackerRank</h3>
+                <p style="color: var(--primary); font-weight: 800; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase;">Python Basic</p>
+                <p style="color: var(--text-gray); font-size: 0.85rem;">Problem Solving Certified</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to top button -->
+    <a href="#home" id="scroll-top" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--text-dark); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 999; box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; transition: 0.3s;">↑</a>
+
+    <section id="skills" class="reveal">
+        <div class="section-head">
+            <p>Knowledge</p>
+            <h2>Technical Arsenal</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="card skill-box">
+                <h4>PROGRAMMING</h4>
+                <div class="skill-items">
+                    <img src="https://skillicons.dev/icons?i=python"><img src="https://skillicons.dev/icons?i=java"><img src="https://skillicons.dev/icons?i=c"><img src="https://skillicons.dev/icons?i=cpp">
+                </div>
+            </div>
+            <div class="card skill-box">
+                <h4>WEB DEVELOPMENT</h4>
+                <div class="skill-items">
+                    <img src="https://skillicons.dev/icons?i=html"><img src="https://skillicons.dev/icons?i=css"><img src="https://skillicons.dev/icons?i=js"><div class="skill-pill">MERN Stack</div>
+                </div>
+            </div>
+            <div class="card skill-box">
+                <h4>DATABASES</h4>
+                <div class="skill-items">
+                    <img src="https://skillicons.dev/icons?i=mysql"><img src="https://skillicons.dev/icons?i=mongodb"><img src="https://skillicons.dev/icons?i=sqlite">
+                </div>
+            </div>
+            <div class="card skill-box">
+                <h4>AI & DATA SCIENCE</h4>
+                <div class="skill-items">
+                    <img src="https://skillicons.dev/icons?i=azure"><div class="skill-pill">Machine Learning</div><div class="skill-pill">Power BI</div>
+                </div>
+            </div>
+            <div class="card skill-box">
+                <h4>TOOLS</h4>
+                <div class="skill-items">
+                    <img src="https://skillicons.dev/icons?i=git"><img src="https://skillicons.dev/icons?i=github"><img src="https://skillicons.dev/icons?i=vscode"><img src="https://skillicons.dev/icons?i=pycharm"><div class="skill-pill">Jupyter</div>
+                </div>
+            </div>
+            <div class="card skill-box">
+                <h4>CORE CONCEPTS</h4>
+                <div class="skill-items">
+                    <div class="skill-pill">DSA</div><div class="skill-pill">Algorithms</div><div class="skill-pill">OOPs</div><div class="skill-pill">OS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <div class="section-head">
+            <p>Connection</p>
+            <h2>Let's build together</h2>
+        </div>
+        <div class="card contact-card">
+            <div class="contact-text">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Seek and Innovate.</h3>
+                <p style="color: var(--text-gray); margin-bottom: 40px;">Open for internships and collaborative AI projects. Reach out via socials:</p>
+                <div style="display: flex; gap: 30px;">
+                    <a href="https://linkedin.com/in/sri-manju-nadh-dalavai-651840300" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin" height="50"></a>
+                    <a href="https://github.com/Srimanjunadh" target="_blank"><img src="https://skillicons.dev/icons?i=github" height="50"></a>
+                    <a href="mailto:srimanjunadh.d@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" height="50"></a>
+                </div>
+            </div>
+            <form action="mailto:srimanjunadh.d@gmail.com" method="POST">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your message..." required></textarea>
+                <button type="submit" class="btn btn-primary" style="border: none; width: 100%; cursor: pointer;">Send Proposal</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <img src="https://skillicons.dev/icons?i=python"><img src="https://skillicons.dev/icons?i=java"><img src="https://skillicons.dev/icons?i=react"><img src="https://skillicons.dev/icons?i=azure"><img src="https://skillicons.dev/icons?i=mongodb"><img src="https://skillicons.dev/icons?i=nodejs"><img src="https://skillicons.dev/icons?i=mysql"><img src="https://skillicons.dev/icons?i=vscode">
+            <img src="https://skillicons.dev/icons?i=python"><img src="https://skillicons.dev/icons?i=java"><img src="https://skillicons.dev/icons?i=react"><img src="https://skillicons.dev/icons?i=azure"><img src="https://skillicons.dev/icons?i=mongodb"><img src="https://skillicons.dev/icons?i=nodejs"><img src="https://skillicons.dev/icons?i=mysql"><img src="https://skillicons.dev/icons?i=vscode">
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 60px; color: var(--text-gray);">
+        &copy; 2025 SMN DALAVAI • Built for Excellence
+    </footer>
+
+    <script>
+        const textElement = document.getElementById('typing-text');
+        const roles = ['AI Engineer Intern', 'Software Developer', 'Quick Learner', 'Problem Solver'];
+        let roleIdx = 0, charIdx = 0, isDeleting = false;
+
+        function openProject(id) {
+            const data = document.getElementById(id + '-data');
+            const title = data.querySelector('.m-title').textContent;
+            const date = data.querySelector('.m-date') ? data.querySelector('.m-date').textContent : '';
+            const body = data.querySelector('.m-body').innerHTML;
+
+            document.getElementById('modal-project-head').innerHTML = `
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px;">${title}</h2>
+                <p style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 30px;">${date}</p>
+            `;
+            document.getElementById('modal-project-body').innerHTML = body;
+            
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 400);
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) closeModal();
+        }
+
+        function type() {
+            const role = roles[roleIdx];
+            textElement.textContent = isDeleting ? role.substring(0, charIdx - 1) : role.substring(0, charIdx + 1);
+            charIdx = isDeleting ? charIdx - 1 : charIdx + 1;
+            let speed = isDeleting ? 50 : 100;
+            if (!isDeleting && charIdx === role.length) { isDeleting = true; speed = 2000; }
+            else if (isDeleting && charIdx === 0) { isDeleting = false; roleIdx = (roleIdx + 1) % roles.length; speed = 500; }
+            setTimeout(type, speed);
+        }
+
+        function reveal() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                    el.querySelectorAll('.card, .skill-box, .project-card').forEach((child, i) => {
+                        setTimeout(() => { child.style.opacity = '1'; child.style.transform = 'translateY(0)'; }, i * 100);
+                    });
+                }
+            });
+        }
+
+        document.querySelectorAll('.card, .skill-box, .project-card').forEach(c => { 
+            c.style.opacity = '0'; 
+            c.style.transform = 'translateY(20px)'; 
+            c.style.transition = '0.6s cubic-bezier(0.4, 0, 0.2, 1)'; 
+        });
+
+        window.addEventListener('scroll', () => {
+            reveal();
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+
+            const btn = document.getElementById('scroll-top');
+            if (window.scrollY > 500) {
+                btn.style.opacity = '1';
+                btn.style.pointerEvents = 'all';
+            } else {
+                btn.style.opacity = '0';
+                btn.style.pointerEvents = 'none';
+            }
+
+            // Highlighting active section in nav
+            document.querySelectorAll('section, header').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    const id = section.getAttribute('id');
+                    document.querySelectorAll('.nav-links a').forEach(a => {
+                        a.classList.remove('nav-active');
+                        if (a.getAttribute('href') === `#${id}`) a.classList.add('nav-active');
+                    });
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('load', () => { type(); reveal(); });
+    </script>
+</body>
+</html>
