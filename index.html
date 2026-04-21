@@ -327,7 +327,7 @@
             <a href="#achievements">Milestones</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
-            <a href="Resume.pdf" target="_blank" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.8rem; margin-left: 10px;">Resume</a>
+            <a href="Resume.pdf" target="_blank" download="Sri_Manju_Nadh_Resume.pdf" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.8rem; margin-left: 10px;">Resume</a>
         </div>
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -342,7 +342,7 @@
         <h2 id="typing-text"></h2>
         <div style="display: flex; gap: 20px;">
             <a href="#projects" class="btn btn-primary">Check Works</a>
-            <a href="Resume.pdf" target="_blank" class="btn" style="border: 1px solid var(--border);">See My Resume</a>
+            <a href="Resume.pdf" target="_blank" download="Sri_Manju_Nadh_Resume.pdf" class="btn" style="border: 1px solid var(--border);">See My Resume</a>
         </div>
     </header>
 
@@ -750,6 +750,28 @@
     </footer>
 
     <script>
+        // --- Prevent Viewing Source / Dev Tools --- //
+        // 1. Disable Right-Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        
+        // 2. Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+U, etc.)
+        document.addEventListener('keydown', (e) => {
+            if (
+                e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C' || e.key === 'i' || e.key === 'j' || e.key === 'c')) || 
+                (e.ctrlKey && (e.key === 'U' || e.key === 'u'))
+            ) {
+                e.preventDefault();
+            }
+        });
+
+        // 3. DevTools Freeze Trap
+        // If someone bypasses the keyboard shortcut and opens DevTools via the browser menu, 
+        // this loop continuously triggers the debugger, freezing the tab and DevTools UI.
+        setInterval(function() {
+            debugger;
+        }, 100);
+
         const textElement = document.getElementById('typing-text');
         const roles = ['AI Engineer Intern', 'Software Developer', 'Quick Learner', 'Problem Solver'];
         let roleIdx = 0, charIdx = 0, isDeleting = false;
